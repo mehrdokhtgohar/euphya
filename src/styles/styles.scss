@@ -1,4 +1,5 @@
 $color_1: #fff;
+$color_opacity: #ffffff1a;
 $color_2: #888;
 $color_3: black;
 $color_4: white;
@@ -9,7 +10,6 @@ $background-color_1: #070709;
 $background-color_2: #151519;
 $background-color_3: transparent;
 $background-color_4: #ff1a8c;
-$background-color_5: #1e40af;
 $background-color_6: #e60073;
 $background-color_7: #000;
 
@@ -22,6 +22,7 @@ $background-color_7: #000;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -44,6 +45,17 @@ body {
   }
 }
 .nav-links {
+  a {
+    color: $color_1;
+    text-decoration: none;
+    margin-left: 48px;
+    transition: color 0.3s;
+    &:hover {
+      color: $color_2;
+    }
+  }
+}
+.nav-links-footer {
   a {
     color: $color_1;
     text-decoration: none;
@@ -86,51 +98,33 @@ body {
   p {
     font-size: 18px;
     font-weight: 400;
+    margin-bottom: 71px;
   }
-}
-.search-bar {
-  margin: 71px auto;
-  width: 430px;
-  height: 56px;
-  background-color: $background-color_2;
-  border: 1px solid #ae095c;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  input {
-    padding: 12px 16px;
+  button {
+    background-color: $background-color_4;
+    color: $color_4;
+    padding: 12px 49px;
     border: none;
-    width: calc(100% - 48px);
-    background-color: $background-color_3;
-    color: $color_3;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $background-color_6;
+    }
   }
 }
-.search-icon {
-  width: 24px;
-  height: 24px;
-  padding: 0 16px;
-}
-button {
-  background-color: $background-color_4;
-  color: $color_4;
-  padding: 12px 49px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  &:hover {
-    background-color: $background-color_5;
-  }
-}
+
 .cards-wrapper {
   display: flex;
   justify-content: center;
-  background: url("/src/images/Features.svg") no-repeat;
+  background: url("/src/images/features.svg") no-repeat;
   background-size: 100% auto;
   background-position: left top;
   height: 700px;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 .ellipse {
   position: absolute;
@@ -148,10 +142,13 @@ button {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   row-gap: 48px;
-  max-width: 1136px;
+  max-width: 1144px;
   width: 100%;
   z-index: 2;
   margin: 0 32px;
+  > h2 {
+    display: none;
+  }
 }
 .card {
   background-color: $background-color_2;
@@ -163,35 +160,38 @@ button {
 }
 .card-icon {
   margin-right: 16px;
-  svg {
-    width: 24px;
-    height: 24px;
+  img {
+    width: 40px;
+    height: 40px;
   }
 }
 .card-text {
   h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
   }
   p {
-    font-size: 14px;
-    margin: 4px 0 0;
+    font-size: 16px;
+    padding-top: 12px;
+    font-weight: 500;
   }
 }
 .pricing-cards-container {
   display: grid;
-  gap: 16px;
+  gap: 24px;
   width: 100%;
   padding: 32px;
-  height: 700px;
+  min-height: 100vh;
   align-items: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  h2 {
+    display: none;
+  }
 }
 .pricing-card {
   background-color: $background-color_2;
   border-radius: 12px;
-  padding: 24px;
+  padding-left: 24px;
   height: 486px;
 }
 .pricing-card.special {
@@ -201,28 +201,44 @@ button {
 }
 .pricing-title {
   color: $color_5;
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 32px;
+  font-weight: 500;
+  line-height: 28px;
 }
+
 .pricing-amount {
   color: $color_1;
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 57px;
+}
+.pricing-subtitle {
+  color: $color_1;
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 48px;
+  font-weight: 500;
+  line-height: 28px;
 }
 .pricing-features {
   p {
     color: $color_1;
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-left: 24px;
+    font-weight: 400;
+    line-height: 19px;
   }
 }
 .about-us {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 100vh;
   padding: 0 24px;
-  background: url("/src/images/About\ Us.svg") no-repeat;
+  background: url("/src/images/about-us.svg") no-repeat;
   background-size: 100% auto;
   background-position: center;
   p {
@@ -231,6 +247,7 @@ button {
     text-align: left;
     max-width: 442px;
     margin: 0;
+    font-weight: 400;
   }
 }
 .subscribe-section {
@@ -238,53 +255,60 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 32px;
-  height: 700px;
+  height: 100vh;
   background: url("/src/images/coming-soon.svg") no-repeat;
   background-size: 60% auto;
   background-position: left center;
 }
 .subscribe-text {
   text-align: left;
-  font-size: 1rem;
+  font-size: 18px;
   max-width: 300px;
   margin: 0;
+  font-weight: 400;
+  line-height: 21px;
 }
 .subscribe-card {
   padding: 48px 56px;
   border-radius: 12px;
-  max-width: 400px;
   text-align: left;
   background-color: $background-color_2;
-  h3 {
-    margin-bottom: 16px;
+  width: 559px;
+  p {
+    margin-bottom: 32px;
     color: $color_1;
+    font-family: 500;
+    font-size: 18px;
+    line-height: 21px;
   }
   input {
     width: 100%;
     padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #fff;
+    margin-bottom: 32px;
+    border: 1px solid $color_opacity;
     border-radius: 9px;
     background-color: $background-color_2;
     color: $color_1;
     font-size: 1rem;
     &::placeholder {
-      color: $color_6;
+      color: $color_opacity;
     }
   }
   button {
-    width: 104px;
-    padding: 8px;
-    border: none;
-    border-radius: 7px;
     background-color: $background-color_4;
-    color: $color_1;
+    color: $color_4;
+    padding: 12px 49px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s;
+
     &:hover {
       background-color: $background-color_6;
     }
   }
 }
+
 .footer-nav {
   background-color: $background-color_1;
   padding: 1rem 0;
@@ -298,19 +322,173 @@ button {
   }
 }
 @media (max-width: 640px) {
+  .hero {
+    background-size: 100% auto;
+    width: 100%;
+    align-items: start;
+    background-position: top center;
+    padding-top: 72px;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 16px;
+    h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 77px;
+    }
+  }
+
+  .cards-wrapper {
+    background: unset;
+    height: unset;
+  }
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    h2 {
+      display: block;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 38px;
+    }
+  }
+  .card {
+    height: unset;
+  }
+  .card-text {
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  .card-icon {
+    margin-right: 16px;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
   .container {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
   .nav-links {
     display: none;
   }
+  .nav-links-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 48px;
+    margin-top: 24px;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .nav-links-footer a {
+    text-decoration: none;
+    color: $color_1;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    align-items: start;
+    margin-left: unset;
+  }
   .logo {
     img {
-      width: 80px;
+      width: 143px;
     }
   }
   .pricing-cards-container {
-    height: unset;
     grid-template-columns: unset;
+    margin-top: 80px;
+    h2 {
+      display: block;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 38px;
+    }
+  }
+  .about-us {
+    background: unset;
+    align-items: start;
+    flex-direction: column;
+    height: unset;
+    margin-top: 240px;
+    h2 {
+      display: block;
+      margin-bottom: 54px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19px;
+    }
+  }
+
+  .subscribe-section {
+    background: unset;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .subscribe-card {
+    width: 100%;
+    padding: 16px;
+    margin-top: 24px;
+    button {
+      padding: 12px 16px;
+    }
+  }
+  .pricing-title {
+    font-size: 20px;
+    margin-top: 24px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .pricing-amount {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+  .pricing-subtitle {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .pricing-features {
+    p {
+      font-size: 14px;
+      padding-left: 24px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+  .pricing-card {
+    height: unset;
+  }
+  .subscribe-card {
+    padding: 16px;
+    width: 100%;
+    p {
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    input {
+      margin-bottom: 24px;
+      border-radius: 9px;
+    }
   }
 }
