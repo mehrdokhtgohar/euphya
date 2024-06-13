@@ -72,7 +72,7 @@ body {
   align-items: center;
   height: 80vh;
   text-align: center;
-  background: url("/src/images/hero.png") no-repeat center center/cover;
+  background: url("/images/hero.png") no-repeat center center/cover;
   position: relative;
   background-size: 806px auto;
   &::before {
@@ -118,7 +118,7 @@ body {
 .cards-wrapper {
   display: flex;
   justify-content: center;
-  background: url("/src/images/features.svg") no-repeat;
+  background: url("images/features.svg") no-repeat;
   background-size: 100% auto;
   background-position: left top;
   height: 700px;
@@ -195,7 +195,7 @@ body {
   height: 486px;
 }
 .pricing-card.special {
-  background: url("/src/images/gradient-background.png") no-repeat;
+  background: url("/images/gradient-background.png") no-repeat;
   background-position: -422px 180px;
   background-color: $background-color_2;
 }
@@ -238,7 +238,7 @@ body {
   align-items: center;
   height: 100vh;
   padding: 0 24px;
-  background: url("/src/images/about-us.svg") no-repeat;
+  background: url("/images/about-us.svg") no-repeat;
   background-size: 100% auto;
   background-position: center;
   p {
@@ -256,7 +256,7 @@ body {
   align-items: center;
   padding: 32px;
   height: 100vh;
-  background: url("/src/images/coming-soon.svg") no-repeat;
+  background: url("/images/coming-soon.svg") no-repeat;
   background-size: 60% auto;
   background-position: left center;
 }
@@ -275,7 +275,7 @@ body {
   background-color: $background-color_2;
   width: 559px;
   p {
-    margin-bottom: 32px;
+    padding-bottom: 32px;
     color: $color_1;
     font-family: 500;
     font-size: 18px;
@@ -348,7 +348,6 @@ body {
       margin-bottom: 77px;
     }
   }
-
   .cards-wrapper {
     background: unset;
     height: unset;

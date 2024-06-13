@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build:css": "npx tailwindcss -i ./src/styles/tailwind.css -o ./dist/styles.css --watch"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4"
+    "postcss": "^8.4.38"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "fast-csv": "^5.0.1",
+    "nodemon": "^3.1.3"
   }
 }
