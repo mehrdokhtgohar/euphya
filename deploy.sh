@@ -9,8 +9,8 @@ export URL=0.0.0.0
 export PORT=80
 
 # Define your domain and email for Certbot
-DOMAIN="yourdomain.com"
-EMAIL="youremail@example.com"
+DOMAIN="euphya.co"
+EMAIL="mehrdokht.gohard@gmail.com"
 
 # Update and install required packages
 sudo apt update
