@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # update to the lastest version of code
-git stash .
+git stash
 git pull origin develop
 
 # app configuration
