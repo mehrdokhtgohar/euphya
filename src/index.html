@@ -1,216 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="index.js"></script>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a onclick="handleScroll" data-id="home" href="#home">Home</a>
+        <a onclick="handleScroll" data-id="features" href="#features">Features</a>
+        <a onclick="handleScroll" data-id="pricing" href="#pricing">Pricing</a>
+        <a onclick="handleScroll" data-id="about-us" href="#about-us">About Us</a>
+        <a onclick="handleScroll" data-id="contact-us" href="#contact-us">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <h2>With AI-Powered Search and Recommendations</h2>
+      <h1>Revolutionize Your E-commerce</h1>
+      <p>
+        Enhance customer experience and boost sales with our intelligent
+        search solutions
+      </p>
+      <button onclick="handleScroll('contact-us')">Get Started</button>
+    </div>
+  </div>
+  <div class="cards-wrapper" id="features">
+    <img src="/images/Ellipse 2.png" class="ellipse ellipse-2" />
+    <img src="/images/Ellipse 3.png" class="ellipse ellipse-3" />
+    <div class="cards-container">
+      <h2>Features</h2>
+      <div class="card">
+        <div class="card-icon">
+          <img src="./icons/search.svg" alt="Logo" />
+        </div>
+        <div class="card-text">
+          <h2>Advanced AI Search</h2>
+          <p>
+            Provide accurate and relevant search results to your customers.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <img src="./icons/personalize.svg" alt="Logo" />
+        </div>
+        <div class="card-text">
+          <h2>Personalized Recommendations</h2>
+          <p>Boost sales with tailor-made product suggestions.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <img src="./icons/integration.svg" alt="Logo" />
+        </div>
+        <div class="card-text">
+          <h2>Seamless Integration</h2>
+          <p>
+            Easily integrate our AI solutions with your existing platform.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <img src="./icons/analytics.svg" alt="Logo" />
+        </div>
+        <div class="card-text">
+          <h2>Real-time Analytics</h2>
+          <p>Gain insights into customer behavior and search trends.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pricing-cards-container" id="pricing">
+    <h2>Plans</h2>
+    <div class="pricing-card">
+      <p class="pricing-title">Basic Plan</p>
+      <h1 class="pricing-amount">$75 /Month</h1>
+      <p class="pricing-subtitle">Up to 50,000 searches per month</p>
+      <div class="pricing-features">
+        <p>Advanced AI search capabilities</p>
+        <p>Basic recommendations</p>
+        <p>Standard customer support</p>
+        <p>Monthly usage reports</p>
+      </div>
+    </div>
+    <div class="pricing-card">
+      <p class="pricing-title">Pro Plan</p>
+      <h1 class="pricing-amount">$250 /Month</h1>
+      <p class="pricing-subtitle">Up to 200,000 searches per month</p>
+      <div class="pricing-features">
+        <p>All features in Basic Plan</p>
+        <p>Enhanced recommendations</p>
+        <p>Priority customer support</p>
+        <p>Weekly usage reports</p>
+        <p>Real-time analytics dashboard</p>
+      </div>
+    </div>
+    <div class="pricing-card special">
+      <p class="pricing-title">Enterprise Plan</p>
+      <h1 class="pricing-amount">Contact us</h1>
+      <p class="pricing-subtitle">Unlimited searches</p>
+      <div class="pricing-features">
+        <p>All features in Pro Plan</p>
+        <p>Custom recommendations and search algorithms</p>
+        <p>Dedicated account manager</p>
+        <p>24/7 premium support</p>
+        <p>Custom usage reports</p>
+        <p>Integration support for multiple platforms</p>
+      </div>
+    </div>
+  </div>
+  <div class="about-us" id="about-us">
+    <h2>About Us</h2>
+    <p>
+      We are dedicated to enhancing e-commerce experiences through
+      cutting-edge AI technology. Our team of experts is committed to
+      delivering innovative solutions that drive results.
+    </p>
+  </div>
+  <div class="subscribe-section" id="contact-us">
+    <p class="subscribe-text">
+      Stay tuned for our upcoming features and enhancements designed to
+      further elevate your business.
+    </p>
+    <div class="subscribe-card">
+      <form action="/submit_email" method="POST" id="emailForm">
+        <p>Enter your email to get the latest updates.</p>
+        <input type="email" placeholder="Email address" required id="email_address" name="email_address" />
+        <button onclick="submit">Notify Me</button>
+      </form>
+    </div>
+  </div>
+  <footer class="footer-nav">
     <nav class="nav">
       <div class="container">
         <div class="logo">
           <img src="./images/logo.svg" alt="Logo" />
         </div>
-        <div class="nav-links">
-          <a onclick="handleScroll" data-id="home" href="#home">Home</a>
-          <a onclick="handleScroll" data-id="features" href="#features"
-            >Features</a
-          >
-          <a onclick="handleScroll" data-id="pricing" href="#pricing"
-            >Pricing</a
-          >
-          <a onclick="handleScroll" data-id="about-us" href="#about-us"
-            >About Us</a
-          >
-          <a onclick="handleScroll" data-id="contact-us" href="#contact-us"
-            >Contact Us</a
-          >
+        <div class="nav-links-footer">
+          <a onclick="handleScroll" data-id="features" href="#features">Features</a>
+          <a onclick="handleScroll" data-id="pricing" href="#pricing">Pricing</a>
+          <a onclick="handleScroll" data-id="about-us" href="#about-us">About Us</a>
+          <a onclick="handleScroll" data-id="contact-us" href="#contact-us">Contact Us</a>
         </div>
       </div>
     </nav>
-    <div class="hero" id="home">
-      <div class="hero-content">
-        <h2>With AI-Powered Search and Recommendations</h2>
-        <h1>Revolutionize Your E-commerce</h1>
-        <p>
-          Enhance customer experience and boost sales with our intelligent
-          search solutions
-        </p>
-        <button onclick="handleScroll('contact-us')">Get Started</button>
-      </div>
+    <div class="footer-credits">
+      <p>© 2024 Euphya. All rights reserved.</p>
     </div>
-    <div class="cards-wrapper" id="features">
-      <img src="/images/Ellipse 2.png" class="ellipse ellipse-2" />
-      <img src="/images/Ellipse 3.png" class="ellipse ellipse-3" />
-      <div class="cards-container">
-        <h2>Features</h2>
-        <div class="card">
-          <div class="card-icon">
-            <img src="./icons/search.svg" alt="Logo" />
-          </div>
-          <div class="card-text">
-            <h2>Advanced AI Search</h2>
-            <p>
-              Provide accurate and relevant search results to your customers.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <img src="./icons/personalize.svg" alt="Logo" />
-          </div>
-          <div class="card-text">
-            <h2>Personalized Recommendations</h2>
-            <p>Boost sales with tailor-made product suggestions.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <img src="./icons/integration.svg" alt="Logo" />
-          </div>
-          <div class="card-text">
-            <h2>Seamless Integration</h2>
-            <p>
-              Easily integrate our AI solutions with your existing platform.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <img src="./icons/analytics.svg" alt="Logo" />
-          </div>
-          <div class="card-text">
-            <h2>Real-time Analytics</h2>
-            <p>Gain insights into customer behavior and search trends.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pricing-cards-container" id="pricing">
-      <h2>Plans</h2>
-      <div class="pricing-card">
-        <p class="pricing-title">Basic Plan</p>
-        <h1 class="pricing-amount">$75 /Month</h1>
-        <p class="pricing-subtitle">Up to 50,000 searches per month</p>
-        <div class="pricing-features">
-          <p>Advanced AI search capabilities</p>
-          <p>Basic recommendations</p>
-          <p>Standard customer support</p>
-          <p>Monthly usage reports</p>
-        </div>
-      </div>
-      <div class="pricing-card">
-        <p class="pricing-title">Pro Plan</p>
-        <h1 class="pricing-amount">$250 /Month</h1>
-        <p class="pricing-subtitle">Up to 200,000 searches per month</p>
-        <div class="pricing-features">
-          <p>All features in Basic Plan</p>
-          <p>Enhanced recommendations</p>
-          <p>Priority customer support</p>
-          <p>Weekly usage reports</p>
-          <p>Real-time analytics dashboard</p>
-        </div>
-      </div>
-      <div class="pricing-card special">
-        <p class="pricing-title">Enterprise Plan</p>
-        <h1 class="pricing-amount">Contact us</h1>
-        <p class="pricing-subtitle">Unlimited searches</p>
-        <div class="pricing-features">
-          <p>All features in Pro Plan</p>
-          <p>Custom recommendations and search algorithms</p>
-          <p>Dedicated account manager</p>
-          <p>24/7 premium support</p>
-          <p>Custom usage reports</p>
-          <p>Integration support for multiple platforms</p>
-        </div>
-      </div>
-    </div>
-    <div class="about-us" id="about-us">
-      <h2>About Us</h2>
-      <p>
-        We are dedicated to enhancing e-commerce experiences through
-        cutting-edge AI technology. Our team of experts is committed to
-        delivering innovative solutions that drive results.
-      </p>
-    </div>
-    <div class="subscribe-section" id="contact-us">
-      <p class="subscribe-text">
-        Stay tuned for our upcoming features and enhancements designed to
-        further elevate your business.
-      </p>
-      <div class="subscribe-card">
-        <form action="/submit_email" method="POST" id="emailForm">
-          <p>Enter your email to get the latest updates.</p>
-          <input
-            type="email"
-            placeholder="Email address"
-            required
-            id="email_address"
-            name="email_address"
-          />
-          <button onclick="submit">Notify Me</button>
-        </form>
-      </div>
-    </div>
-    <footer class="footer-nav">
-      <nav class="nav">
-        <div class="container">
-          <div class="logo">
-            <img src="./images/logo.svg" alt="Logo" />
-          </div>
-          <div class="nav-links-footer">
-            <a onclick="handleScroll" data-id="features" href="#features"
-              >Features</a
-            >
-            <a onclick="handleScroll" data-id="pricing" href="#pricing"
-              >Pricing</a
-            >
-            <a onclick="handleScroll" data-id="about-us" href="#about-us"
-              >About Us</a
-            >
-            <a onclick="handleScroll" data-id="contact-us" href="#contact-us"
-              >Contact Us</a
-            >
-          </div>
-        </div>
-      </nav>
-      <div class="footer-credits">
-        <p>© 2024 Euphya. All rights reserved.</p>
-      </div>
-    </footer>
-    <script>
-      document
-        .getElementById("emailForm")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault?.();
-          const emailInput = document.getElementById("email_address").value;
-          console.log(emailInput);
-          try {
-            const response = await fetch("/submit_email", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-              },
-              body: { email_address: email },
-            });
+  </footer>
+  <script>
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    document
+      .getElementById("emailForm")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault?.();
+        const emailInput = document.getElementById("email_address").value;
+        if (!validateEmail(emailInput)) {
+          alert("Email Address is not valid!")
+          return
+        }
+        const formData = new URLSearchParams();
+        formData.append("email_address", emailInput);
 
-            const result = await response.json();
+        try {
+          const response = await fetch("/submit_email", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: formData.toString(),
+          });
+          const result = await response.json();
 
-            if (result.status) {
-              emailInput.value = "";
-            } else {
-              alert("Subscription failed. Please try again.");
-            }
-          } catch (error) {
-            alert("An error occurred. Please try again.");
+          if (result.status) {
+            alert("Thanks for your email! Will get you informed!")
+          } else {
+            alert("Subscription failed. Please try again.");
           }
-        });
-    </script>
-  </body>
+        } catch (error) {
+          alert("An error occurred. Please try again.");
+        }
+      });
+  </script>
+</body>
+
 </html>

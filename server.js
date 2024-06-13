@@ -19,7 +19,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit_email", urlencodedParser, function (req, res) {
-  console.log(req.body);
   email_address = req.body.email_address;
   data = `${email_address}\n`;
   fs.appendFile("emails.csv", data, (err) => {
