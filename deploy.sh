@@ -6,7 +6,7 @@ git pull origin develop
 
 # app configuration
 export URL=0.0.0.0
-export PORT=80
+export PORT=8080
 
 # Define your domain and email for Certbot
 DOMAIN="euphya.co"
