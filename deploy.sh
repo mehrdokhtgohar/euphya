@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# update to the lastest version of code
-git stash
-git pull origin develop
-
 # app configuration
 export URL=0.0.0.0
 export PORT=8080
