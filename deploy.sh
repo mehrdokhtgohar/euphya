@@ -33,6 +33,21 @@ server {
     listen 80;
     server_name $DOMAIN;
 
+    # Redirect HTTP to HTTPS
+    location / {
+        return 301 https://$DOMAIN$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name $DOMAIN;
+
+    ssl_certificate /etc/letsencrypt/live/$DOMAIN/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/$DOMAIN/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
     location / {
         proxy_pass http://$URL:$PORT; # Adjust the port if necessary
         proxy_http_version 1.1;
