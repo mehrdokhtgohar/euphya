@@ -80,6 +80,21 @@ fi
 sudo systemctl enable certbot.timer
 sudo systemctl start certbot.timer
 
+# Configure UFW
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 'Nginx Full'
+sudo ufw enable
+
+# Secure SSH configuration
+SSH_CONF="/etc/ssh/sshd_config"
+sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' $SSH_CONF
+sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' $SSH_CONF
+sudo systemctl reload sshd
+
 # Restart services to ensure they are running with the new configuration
 sudo systemctl restart nginx
 pm2 restart all
