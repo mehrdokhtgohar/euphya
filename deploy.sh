@@ -93,7 +93,7 @@ sudo ufw enable
 SSH_CONF="/etc/ssh/sshd_config"
 sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' $SSH_CONF
 sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' $SSH_CONF
-sudo systemctl reload sshd
+sudo systemctl reload ssh.service
 
 # Restart services to ensure they are running with the new configuration
 sudo systemctl restart nginx
